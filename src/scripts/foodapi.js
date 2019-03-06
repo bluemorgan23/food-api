@@ -5,9 +5,11 @@ let foodLog = document.querySelector(".foodList")
 
 const builder = (insertMe) => {
     return `
-        <h1>${insertMe.name}</h1>
-        <p>${insertMe.category}</p>
-        <p>${insertMe.ethnicity}</p>
+        <div>
+            <h1>${insertMe.name}</h1>
+            <p>${insertMe.category}</p>
+            <p>${insertMe.ethnicity}</p>
+        </div>
     `;
 } 
 

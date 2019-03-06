@@ -1,0 +1,18 @@
+.foodList {
+    display: flex;
+    justify-content: space-around;
+}
+
+.foodList div {
+    border: 1px solid maroon;
+    max-width: 200px;
+}
+
+h1 {
+    font-size: 1.2em;
+    margin: 5px;
+}
+
+p {
+    margin: 5px;
+}
