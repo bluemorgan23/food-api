@@ -9,9 +9,9 @@ const builder = (insertMe) => {
             <p>${insertMe.ethnicity} ${insertMe.category}</p>
             <p>${insertMe.ingredients}</p>
             <p>${insertMe.country}</p>
-            <p>${insertMe.calories}</p>
-            <p>${insertMe.fat}</p>
-            <p>${insertMe.sugar}</p>
+            <p>${insertMe.calories} calories per serving</p>
+            <p>${insertMe.fat}g fat per serving</p>
+            <p>${insertMe.sugar}g of sugar per serving</p>
 
         </div>
     `;
@@ -30,8 +30,8 @@ fetch("http://localhost:8088/food")
                 .then(productInfo => {
                     food.ingredients = productInfo.product.ingredients_text;
                     food.country = productInfo.product.countries;
-                    food.calories = productInfo.product.nutriments.energy_value;
-                   // food.fat = productInfo.product.nurtriments.fat;
+                    food.calories = Math.ceil((productInfo.product.nutriments.energy_serving) / 4.184);
+                    food.fat = productInfo.product.nutriments.fat_serving;
                     food.sugar = productInfo.product.nutriments.sugars_serving;
                     render(food);
                 })
